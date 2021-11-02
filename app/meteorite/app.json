@@ -1,0 +1,46 @@
+{
+  "name": "meteorite",
+  "versionFrom": "goblin-meteorite",
+  "description": "meteorite application",
+  "appCompany": "meteorite",
+  "appId": "meteorite",
+  "xcraft": {
+    "xcraft-core-host": {
+      "mainQuest": "meteorite.boot",
+      "secondaryQuest": "client.start"
+    },
+    "xcraft-core-server": {
+      "userModulesFilter": "^goblin-",
+      "modules": ["goblin-meteorite", "goblin-client"]
+    },
+    "goblin-client": {
+      "mainGoblin": "meteorite",
+      "mainGoblinModule": "goblin-meteorite",
+      "contextId": "meteorite",
+      "themeContexts": ["theme"],
+      "useConfigurator": false,
+      "useLogin": false
+    },
+    "goblin-theme": {
+      "compositions": {
+        "matrix": {
+          "displayName": "Matrix",
+          "themeContexts": ["theme"],
+          "builder": "default",
+          "look": "default",
+          "timing": "default",
+          "spacing": "default",
+          "colors": "matrix",
+          "meta": {
+            "glyph": "solid/tv",
+            "glyphColor": "#00c200",
+            "egg": false
+          }
+        }
+      }
+    },
+    "goblin-workshop": {
+      "entityStorageProvider": "goblin-rethink"
+    }
+  }
+}
